@@ -104,7 +104,7 @@ Current team
 
 [**Jacques Delon** - graphic designer](https://jacquesdelon.com/)
 
-[**Cory Hughart** - developer](https://crockoftime.com/)
+[**Cory Hughart** - developer](https://coryhughart.com/)
 
 [**Raphaël Bonnet**  - developer](https://bonobocuisine.com/)
 
