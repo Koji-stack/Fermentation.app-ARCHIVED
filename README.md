@@ -1,4 +1,6 @@
-# Fermentation.app a tool for fellow fermenters
+# Fermentation.app
+
+## A tool for fellow fermenters
 
 Have you ever suddenly realized that you forgot to stir your soy sauce?
 Left your kefir go sour? Fermentation.app is an open source mobile app
@@ -9,7 +11,9 @@ ferments.
 We want it to work with the widest spectrum of fermentation pratices :
 whether you are growing koji, making cheese, baking sourdough or any
 other activity that involves time and temperature control, you should be
-able to create the fermentation template that fits your needs.\
+able to create the fermentation template that fits your needs
+
+We are currently using the React-Native framework to develop this app.
 
 How it works
 ------------
@@ -17,13 +21,13 @@ How it works
 We are building the app from the idea that regardless of the type of
 fermentation, the variables are the same.
 
-#### Time ⌛ + Temperature 🌡️ + Humidity 💧
+**Time ⌛ + Temperature 🌡️ + Humidity 💧**
 
 From that idea, any fermentation project can be constructed into any
 number of steps towards the final product. For example, a Miso could be
 decomposed this way :
 
-#### 1. growing koji ➡ 2. aging miso 
+**1. growing koji ➡ 2. aging miso**
 
 You can add as many steps as you need and configure each of these with a
 time span, temperature and humidity ranges as well as preparation
@@ -98,11 +102,11 @@ We are looking for
 Current team
 ------------
 
-**Raphaël Bonnet**  - developer
-
-**Cory Hughart** - developer
-
 [**Jacques Delon** - graphic designer](https://jacquesdelon.com/)
+
+[**Cory Hughart** - developer](https://crockoftime.com/)
+
+[**Raphaël Bonnet**  - developer](https://bonobocuisine.com/)
 
 
 How to contribute
