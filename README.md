@@ -99,8 +99,11 @@ Current team
 ------------
 
 **Raphaël Bonnet**  - developer
+
 **Cory Hughart** - developer
+
 [**Jacques Delon** - graphic designer](https://jacquesdelon.com/)
+
 
 How to contribute
 -----------------
@@ -110,9 +113,9 @@ and abilities that you could bring to the project, please get in touch.
 Same goes if you want to contribute any other way, or if you just want
 to chat.
 
-### [contribute@fermentation.app](mailto:contribute@fermentation.app)
+#### [contribute@fermentation.app](mailto:contribute@fermentation.app)
 
 If you want to contribute to the project, you can also back us on open
 collective.
 
-### [Open Collective](https://opencollective.com/fermentationapp)
+#### [Open Collective](https://opencollective.com/fermentationapp)
