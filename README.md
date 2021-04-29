@@ -17,13 +17,13 @@ How it works
 We are building the app from the idea that regardless of the type of
 fermentation, the variables are the same.
 
-### Time ⌛ + Temperature 🌡️ + Humidity 💧
+#### Time ⌛ + Temperature 🌡️ + Humidity 💧
 
 From that idea, any fermentation project can be constructed into any
 number of steps towards the final product. For example, a Miso could be
 decomposed this way :
 
-### 1. growing koji ➡ 2. aging miso 
+#### 1. growing koji ➡ 2. aging miso 
 
 You can add as many steps as you need and configure each of these with a
 time span, temperature and humidity ranges as well as preparation
