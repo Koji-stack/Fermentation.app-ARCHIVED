@@ -11,7 +11,7 @@ whether you are growing koji, making cheese, baking sourdough or any
 other activity that involves time and temperature control, you should be
 able to create the fermentation template that fits your needs.\
 
-How it works {.title .svelte-idq776}
+How it works
 ------------
 
 We are building the app from the idea that regardless of the type of
@@ -29,7 +29,7 @@ You can add as many steps as you need and configure each of these with a
 time span, temperature and humidity ranges as well as preparation
 instructions if needed.
 
-Never forget a ferment again {.title .svelte-idq776}
+Never forget a ferment again
 ----------------------------
 
 For each step, you can set alerts indicating which action needs to be
@@ -37,7 +37,7 @@ performed on your ongoing ferment. The ferments that need to be checked
 will be grouped in the control room, which provides an overview of all
 your fermentations.
 
-Share your templates {.title .svelte-idq776}
+Share your templates
 --------------------
 
 Share the templates you created with the community, thus enabling
@@ -45,7 +45,7 @@ beginners and contributing to the shared knowledge by letting us know
 your take on hot sauce and what are the steps that make your approach
 peculiar.
 
-Straight to the point {.title .svelte-idq776}
+Straight to the point
 ---------------------
 
 Because we think the app shouldn't get in your way while you handle
@@ -55,7 +55,7 @@ check alerts on the fly. Careful use of color, well hierarchized
 typesetting and visual cues such as emojis will work together to make
 everything as straightforward as can be.
 
-Spread the culture {.title .svelte-idq776}
+Spread the culture
 ------------------
 
 We believe that fermentation is inherently about sharing and that,
@@ -72,7 +72,7 @@ great way to acknowledge the vastness of fermentation around the world.
 We also think that it could have a great educational value and
 contribute in spreading fermentation culture to wider audiences.
 
-Project status {.title .svelte-idq776}
+Project status
 --------------
 
 We have much more work to do and many features to implement. We have
@@ -84,7 +84,7 @@ contribute in spreading knowledge.
 
 If you are interested in the project, there are many ways to support us.
 
-We are looking for {.title .svelte-1chdt4p}
+We are looking for
 ------------------
 
 💻 Developers (React-native)
@@ -95,7 +95,7 @@ We are looking for {.title .svelte-1chdt4p}
 
 💰 Sponsors
 
-Current team {.title .svelte-idq776}
+Current team
 ------------
 
 **Raphaël Bonnet**  - developer
