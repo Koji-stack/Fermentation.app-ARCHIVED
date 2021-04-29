@@ -9,7 +9,7 @@ import {Text} from 'react-native';
 import React, {useState} from 'react';
 import {PanGestureHandler, State} from 'react-native-gesture-handler';
 import styled from 'styled-components/native';
-import {Strings} from 'res';
+import Strings from 'res/strings';
 
 const DurationInput = (props) => {
   const {

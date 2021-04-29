@@ -4,15 +4,12 @@
 // The other main advantage is that it allows us to encapsulate more easily and to render a readable and accessible code.
 
 import React from 'react';
-import Subheader from 'customui/Subheader.js';
-import {
-  HeaderTextInput,
-  IngredientTextInput,
-  RegularDateInput,
-  RegularTextInput,
-  StepsContainer,
-} from 'inputformik';
-import {Strings} from 'res';
+import Subheader from 'ui/Subheader.js';
+import IngredientTextInput from 'inputformik/IngredientTextInput';
+import RegularDateInput from 'inputformik/RegularDateInput';
+import FormTextInput from 'inputformik/FormTextInput';
+import StepsContainer from 'inputformik/StepsContainer';
+import Strings from 'res/strings';
 import {ScrollView, Button} from 'react-native';
 import {Field, FieldArray, Formik} from 'formik';
 
@@ -40,20 +37,23 @@ const AddFermentScreen = () => {
         onSubmit={(values) => console.log(values)}>
         {({handleChange, handleBlur, handleSubmit, values}) => (
           <>
-            {/* This field call for a specifically tailored TextInput <HeaderTextInput> to gather the main name of the ferment */}
+            {/* This field call for a specifically tailored TextInput <FormTextInput> to gather the main name of the ferment */}
             <Field
-              component={HeaderTextInput}
+              component={FormTextInput}
               name="fermentName"
               placeholder={Strings.afNameFerment}
+              multiline={false}
+              sizeStyle={'header'}
             />
             <Subheader subheader={Strings.afTypeFerment} />
 
-            {/* This field call for a specifically tailored TextInput <RegularTextInput> to gather the type of the ferment */}
+            {/* This field call for a specifically tailored TextInput <FormTextInput> to gather the type of the ferment */}
             <Field
-              component={RegularTextInput}
+              component={FormTextInput}
               name="fermentType"
               placeholder={Strings.afTypeFerment}
               multiline={false}
+              sizeStyle={'subheader'}
             />
 
             <Subheader subheader={'Ferment start date'} />
@@ -65,7 +65,7 @@ const AddFermentScreen = () => {
             <Subheader subheader={Strings.afIngredient} />
 
             {/* This fieldarray is made to have a dynamic field generation to add a large amount of different ingredient
-            <IngredientTextInput> is itself reliant on <RegularTextInput> */}
+            <IngredientTextInput> is itself reliant on <FormTextInput> */}
             <FieldArray name="ingredients" component={IngredientTextInput} />
 
             <Subheader subheader={Strings.afSteps} />

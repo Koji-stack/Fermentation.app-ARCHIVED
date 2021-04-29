@@ -14,7 +14,7 @@ const RegularDateInput = (props) => {
     form: {setFieldValue},
   } = props;
 
-  // Here, as for RegularTextInput, we take the "name" to id the field, value to have an initial value to pass to the picker
+  // Here, as for FormTextInput, we take the "name" to id the field, value to have an initial value to pass to the picker
   // SetFieldValue allows us to bind Formik with this component onDateChange without too much problem.
   // The DatePicker is quite simple. Here we chose to use the android variant for more integration with the general context
   // we might either create our own Date Picker or chose to adapt the variation around the user' OS.
