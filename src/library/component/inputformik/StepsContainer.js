@@ -20,9 +20,9 @@ import {Button, TouchableOpacity} from 'react-native';
 import React from 'react';
 import Accordion from 'react-native-collapsible/Accordion';
 import {useState} from 'react';
-import StepsInput from './StepsInput.js';
-import Subheader from 'customui/Subheader.js';
-import {Strings} from 'res';
+import StepsInput from 'inputformik/StepsInput.js';
+import Subheader from 'ui/Subheader.js';
+import Strings from 'res/strings';
 
 const StepsContainer = (props) => {
   const {

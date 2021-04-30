@@ -9,8 +9,8 @@
 
 import {Button} from 'react-native';
 import React from 'react';
-import {Strings} from 'res';
-import RegularTextInput from 'inputformik/RegularTextInput.js';
+import Strings from 'res/strings';
+import FormTextInput from 'inputformik/FormTextInput.js';
 import {Field} from 'formik';
 import styled from 'styled-components/native';
 
@@ -25,16 +25,18 @@ const IngredientTextInput = (props) => {
           <Field
             key={`ingredients.${index}.nameIngredient`}
             name={`ingredients.${index}.nameIngredient`}
-            component={RegularTextInput}
+            component={FormTextInput}
             placeholder={Strings.placeholderIngredient}
             multiline={false}
+            sizeStyle={'regular'}
           />
           <Field
             key={`ingredients.${index}.quantity`}
             name={`ingredients.${index}.quantity`}
-            component={RegularTextInput}
+            component={FormTextInput}
             placeholder={Strings.placeholderQuantity}
             multiline={false}
+            sizeStyle={'regular'}
           />
           <Button
             key={`ingredients.${index}.remove`}

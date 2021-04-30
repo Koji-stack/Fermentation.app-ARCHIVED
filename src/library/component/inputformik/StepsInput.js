@@ -7,14 +7,13 @@
 
 import styled from 'styled-components/native';
 import React from 'react';
-import SubheaderTextInput from './SubheaderTextInput.js';
-import TemperatureInput from './TemperatureInput.js';
-import RegularTextInput from './RegularTextInput.js';
+import FormTextInput from 'inputformik/FormTextInput.js';
+import TemperatureInput from 'inputformik/TemperatureInput.js';
 import {Field} from 'formik';
-import Subheader from 'customui/Subheader.js';
-import DurationInput from './DurationInput.js';
-import TagContainer from './TagContainer.js';
-import {Strings} from 'res';
+import Subheader from 'ui/Subheader.js';
+import DurationInput from 'inputformik/DurationInput.js';
+import TagContainer from 'inputformik/TagContainer.js';
+import Strings from 'res/strings';
 
 const StepsInput = (section, index, isActive) => {
   return (
@@ -23,7 +22,9 @@ const StepsInput = (section, index, isActive) => {
         key={`steps.${index}.nameStep`}
         name={`steps.${index}.nameStep`}
         placeholder={Strings.afNameStep}
-        component={SubheaderTextInput}
+        component={FormTextInput}
+        multiline={false}
+        sizeStyle={'subheader'}
       />
       <Subheader subheader={Strings.temperature} />
       <Field
@@ -50,8 +51,9 @@ const StepsInput = (section, index, isActive) => {
         key={`steps.${index}.commentStep`}
         name={`steps.${index}.commentStep`}
         placeholder={Strings.placeholderComment}
-        component={RegularTextInput}
+        component={FormTextInput}
         multiline={true}
+        sizeStyle={'regular'}
       />
     </ContainerStepInput>
   );
