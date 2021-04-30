@@ -104,9 +104,9 @@ Current team
 
 [**Jacques Delon** - graphic designer](https://jacquesdelon.com/)
 
-[**Cory Hughart** - developer](https://coryhughart.com/)
+[**Raphaël Bonnet**  - lead developer](https://bonobocuisine.com/)
 
-[**Raphaël Bonnet**  - developer](https://bonobocuisine.com/)
+[**Cory Hughart** - developer](https://coryhughart.com/)
 
 
 How to contribute
