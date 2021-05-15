@@ -3,9 +3,9 @@
 
 import {Field} from 'formik';
 import React from 'react';
-import styled from 'styled-components/native';
 import Strings from 'res/strings';
 import {Chip} from 'react-native-paper';
+import {StyleSheet, View} from 'react-native';
 
 const TagInput = (props) => {
   // Here is a Chip from RN PAPER Library that, when clicked on, change display (becomes darker)
@@ -39,28 +39,29 @@ const TagContainer = (props) => {
   // The TagContainer receives the array of possible tags to select and through a .map function generates clickable Chips
 
   return (
-    <ControlContainer>
+    <View style={styles.control}>
       {Strings.simpleTagsName.map((data, index) => (
-        <ChipContainer key={index}>
+        <View key={index} style={styles.chipContain}>
           <Field
             name={props.field.name}
             key={props.field.name}
             component={TagInput}
             data={data}
           />
-        </ChipContainer>
+        </View>
       ))}
-    </ControlContainer>
+    </View>
   );
 };
 
-const ControlContainer = styled.View`
-  flex-direction: row;
-  margin: 5px;
-`;
-
-const ChipContainer = styled.View`
-  flex-wrap: wrap;
-`;
+const styles = StyleSheet.create({
+  control: {
+    flexDirection: 'row',
+    margin: 5,
+  },
+  chipContain: {
+    flexWrap: 'wrap',
+  },
+});
 
 export default TagContainer;

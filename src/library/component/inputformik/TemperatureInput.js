@@ -4,7 +4,7 @@
 
 import MultiSlider from '@ptomasroos/react-native-multi-slider';
 import React, {useState} from 'react';
-import styled from 'styled-components/native';
+import {StyleSheet, Text, View} from 'react-native';
 
 const TemperatureInput = (props) => {
   const {
@@ -17,8 +17,8 @@ const TemperatureInput = (props) => {
   let tempDisplay = temp[0] + ' - ' + temp[1] + '°C';
 
   return (
-    <ContainerTemperatureInput>
-      <StyledTempDisplay>{tempDisplay}</StyledTempDisplay>
+    <View style={styles.container}>
+      <Text style={styles.tempDisplay}>{tempDisplay}</Text>
       <MultiSlider
         onValuesChangeFinish={(val) => setFieldValue(name, val)}
         onValuesChange={(vals) => setTemp(vals)}
@@ -28,19 +28,20 @@ const TemperatureInput = (props) => {
         minMarkerOverlapStepDistance={2}
         allowOverlap={false}
       />
-    </ContainerTemperatureInput>
+    </View>
   );
 };
 
-const ContainerTemperatureInput = styled.View`
-  margin-left: auto;
-  margin-right: auto;
-`;
-
-const StyledTempDisplay = styled.Text`
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 15px;
-`;
+const styles = StyleSheet.create({
+  container: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+  tempDisplay: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    fontSize: 15,
+  },
+});
 
 export default TemperatureInput;

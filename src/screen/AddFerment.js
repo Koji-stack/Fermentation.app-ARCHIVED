@@ -12,8 +12,17 @@ import StepsContainer from 'inputformik/StepsContainer';
 import Strings from 'res/strings';
 import {ScrollView, Button} from 'react-native';
 import {Field, FieldArray, Formik} from 'formik';
+import dayjs from 'dayjs';
+import 'dayjs/locale/fr';
 
 const AddFermentScreen = () => {
+  const submit = (prop) => {
+    prop.steps[0].estimatedEndDate = dayjs(prop.date).add(
+      prop.steps[0].durationStep,
+      'hour',
+    );
+    console.log(prop.steps[0]);
+  };
   return (
     <ScrollView>
       {/* The Formik library helps us organize the gathering of our data in one place to simplify control, test,
@@ -24,6 +33,7 @@ const AddFermentScreen = () => {
           fermentType: '',
           date: new Date(),
           ingredients: [{nameIngredient: '', quantity: ''}],
+          currentStep: 1,
           steps: [
             {
               nameStep: '',
@@ -31,10 +41,12 @@ const AddFermentScreen = () => {
               tempStep: '',
               controlSimpleStep: [],
               commentStep: '',
+              estimatedEndDate: '',
+              effectiveEndDate: '',
             },
           ],
         }}
-        onSubmit={(values) => console.log(values)}>
+        onSubmit={(values) => submit(values)}>
         {({handleChange, handleBlur, handleSubmit, values}) => (
           <>
             {/* This field call for a specifically tailored TextInput <FormTextInput> to gather the main name of the ferment */}
