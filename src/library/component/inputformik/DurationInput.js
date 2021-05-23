@@ -5,10 +5,9 @@
 
 // This component ONLY WORKS within a <Formik> component and as a child of a <Field> component.
 
-import {Text} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React, {useState} from 'react';
 import {PanGestureHandler, State} from 'react-native-gesture-handler';
-import styled from 'styled-components/native';
 import Strings from 'res/strings';
 
 const DurationInput = (props) => {
@@ -61,51 +60,56 @@ const DurationInput = (props) => {
     }
   };
 
+  console.log(props);
+
   return (
-    <DurationContainer>
-      <CountingContainer>
+    <View style={styles.durationContainer}>
+      <View style={styles.countingContainers}>
         <Text>{Strings.month}</Text>
         <PanGestureHandler
           onHandlerStateChange={onStateChange}
           onGestureEvent={onMonthChange}>
-          <CountingText>{month}</CountingText>
+          <Text style={styles.counting}>{month}</Text>
         </PanGestureHandler>
-      </CountingContainer>
+      </View>
 
-      <CountingContainer>
+      <View style={styles.countingContainers}>
         <Text>{Strings.day}</Text>
         <PanGestureHandler
           onHandlerStateChange={onStateChange}
           onGestureEvent={onDayChange}>
-          <CountingText>{day}</CountingText>
+          <Text style={styles.counting}>{day}</Text>
         </PanGestureHandler>
-      </CountingContainer>
+      </View>
 
-      <CountingContainer>
+      <View style={styles.countingContainers}>
         <Text>{Strings.hour}</Text>
         <PanGestureHandler
           onHandlerStateChange={onStateChange}
           onGestureEvent={onHourChange}>
-          <CountingText>{hour}</CountingText>
+          <Text style={styles.counting}>{hour}</Text>
         </PanGestureHandler>
-      </CountingContainer>
-    </DurationContainer>
+      </View>
+    </View>
   );
 };
 
-const DurationContainer = styled.View`
-  flex-direction: row;
-  margin-left: auto;
-  margin-right: auto;
-`;
-const CountingContainer = styled.View`
-  margin-left: auto;
-  margin-right: auto;
-  flex-direction: column;
-  margin: 5px;
-`;
-const CountingText = styled.Text`
-  font-size: 20px;
-`;
+const styles = StyleSheet.create({
+  durationContainer: {
+    flexDirection: 'row',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+
+  countingContainers: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    flexDirection: 'column',
+    margin: 5,
+  },
+  counting: {
+    fontSize: 20,
+  },
+});
 
 export default DurationInput;

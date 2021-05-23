@@ -5,7 +5,6 @@
 
 // This component ONLY WORKS within a <Formik> component and as a child of a <FieldArray> component.
 
-import styled from 'styled-components/native';
 import React from 'react';
 import FormTextInput from 'inputformik/FormTextInput.js';
 import TemperatureInput from 'inputformik/TemperatureInput.js';
@@ -14,10 +13,11 @@ import Subheader from 'ui/Subheader.js';
 import DurationInput from 'inputformik/DurationInput.js';
 import TagContainer from 'inputformik/TagContainer.js';
 import Strings from 'res/strings';
+import {StyleSheet, View} from 'react-native';
 
 const StepsInput = (section, index, isActive) => {
   return (
-    <ContainerStepInput key={index}>
+    <View key={index} style={styles.container}>
       <Field
         key={`steps.${index}.nameStep`}
         name={`steps.${index}.nameStep`}
@@ -55,15 +55,16 @@ const StepsInput = (section, index, isActive) => {
         multiline={true}
         sizeStyle={'regular'}
       />
-    </ContainerStepInput>
+    </View>
   );
 };
 
-const ContainerStepInput = styled.View`
-  border: solid;
-  border-radius: 30px;
-  border-color: ${(props) => props.theme.main};
-  margin: 10px;
-`;
+const styles = StyleSheet.create({
+  container: {
+    borderStyle: 'solid',
+    borderRadius: 20,
+    margin: 10,
+  },
+});
 
 export default StepsInput;

@@ -29,6 +29,10 @@ const Strings = {
   simpleControls: 'Simple Controls',
   comment: 'Comment & Notes',
   simpleTagsName: ['Look', 'Mash', 'Mix', 'Smell'],
+  hoursLeft: 'hours left',
+  daysLeft: 'days left',
+  monthLeft: 'month left',
+  noTempDefined: 'No temperature',
 };
 
 export default Strings;

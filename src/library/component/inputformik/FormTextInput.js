@@ -5,7 +5,7 @@
 // This component ONLY WORKS within a <Formik> component and as a child of a <Field> component.
 
 import React from 'react';
-import styled from 'styled-components/native';
+import {StyleSheet, TextInput} from 'react-native';
 
 const FormTextInput = (props) => {
   // Formik sends in the props that automagically connects the Input form with the
@@ -17,16 +17,16 @@ const FormTextInput = (props) => {
     ...inputProps
   } = props;
 
-  let inputStyle = '10px';
+  let inputStyle = 10;
   switch (sizeStyle) {
     case 'header':
-      inputStyle = '25px';
+      inputStyle = 25;
       break;
     case 'subheader':
-      inputStyle = '17px';
+      inputStyle = 17;
       break;
     case 'regular':
-      inputStyle = '12px';
+      inputStyle = 12;
       break;
     default:
       console.log('default on FormTextInput switch');
@@ -37,9 +37,9 @@ const FormTextInput = (props) => {
 
   return (
     <>
-      <StyledTextInput
+      <TextInput
+        style={[styles.textinput, {fontSize: inputStyle}]}
         multiline={props.multiline}
-        inputStyle={inputStyle}
         value={value}
         onChangeText={(text) => onChange(name)(text)}
         onBlur={() => {
@@ -52,11 +52,11 @@ const FormTextInput = (props) => {
   );
 };
 
-const StyledTextInput = styled.TextInput`
-  color: ${(props) => props.theme.main};
-  font-size: ${(props) => props.inputStyle};
-  margin-left: auto;
-  margin-right: auto;
-`;
+const styles = StyleSheet.create({
+  textinput: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+});
 
 export default FormTextInput;

@@ -1,25 +1,25 @@
 // Subheader
-// Classic reusable subheader component that is meant to encapsulate custom StyledSubheader sent from other components
+// Classic reusable subheader component that is meant to encapsulate custom Text sent from other components
 // Usually meant for under titles and complementary but important informations
 
 import React from 'react';
-import styled from 'styled-components';
+import {StyleSheet, Text, View} from 'react-native';
 
 const Subheader = (props) => (
-  <ContainerSubheader>
-    <StyledSubheader>{props.subheader}</StyledSubheader>
-  </ContainerSubheader>
+  <View style={styles.container}>
+    <Text style={styles.text}>{props.subheader}</Text>
+  </View>
 );
 
-const ContainerSubheader = styled.View`
-  margin-left: auto;
-  margin-right: auto;
-  border-color: black;
-`;
-
-const StyledSubheader = styled.Text`
-  color: ${(props) => props.theme.main};
-  font-size: 20px;
-`;
+const styles = StyleSheet.create({
+  container: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    borderColor: 'black',
+  },
+  text: {
+    fontSize: 20,
+  },
+});
 
 export default Subheader;

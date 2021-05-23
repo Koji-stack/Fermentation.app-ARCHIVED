@@ -7,12 +7,11 @@
 
 // This component ONLY WORKS within a <Formik> component and as a child of a <Field> component.
 
-import {Button} from 'react-native';
+import {Button, StyleSheet, View} from 'react-native';
 import React from 'react';
 import Strings from 'res/strings';
 import FormTextInput from 'inputformik/FormTextInput.js';
 import {Field} from 'formik';
-import styled from 'styled-components/native';
 
 const IngredientTextInput = (props) => {
   const {
@@ -21,7 +20,7 @@ const IngredientTextInput = (props) => {
   return (
     <>
       {values.ingredients.map((ingredients, index) => (
-        <IngredientContainer key={index}>
+        <View key={index} style={styles.container}>
           <Field
             key={`ingredients.${index}.nameIngredient`}
             name={`ingredients.${index}.nameIngredient`}
@@ -45,7 +44,7 @@ const IngredientTextInput = (props) => {
               props.remove(index);
             }}
           />
-        </IngredientContainer>
+        </View>
       ))}
       <Button
         title={Strings.scrMnAddIngButton}
@@ -60,8 +59,10 @@ const IngredientTextInput = (props) => {
   );
 };
 
-const IngredientContainer = styled.View`
-  flex-direction: row;
-`;
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+  },
+});
 
 export default IngredientTextInput;
