@@ -5,13 +5,41 @@ import {Button, StyleSheet, Text, View} from 'react-native';
 import {hoursDiff} from 'res/functions';
 import Strings from 'res/strings';
 
-const TempBlock = (props) => {};
+const TempBlock = (props) => {
+  return (
+    <View style={styles.infoContainer}>
+      <Emoji emoji={{id: 'thermometer'}} size={16} />
+      <Text>{props.temp}</Text>
+    </View>
+  );
+};
 
-const TimeBlock = (props) => {};
+const TimeBlock = (props) => {
+  return (
+    <View style={styles.infoContainer}>
+      <Emoji emoji={{id: 'alarm_clock'}} size={16} />
+      <Text>{props.time}</Text>
+    </View>
+  );
+};
 
-const HumidBlock = (props) => {};
+const HumidBlock = (props) => {
+  return (
+    <View style={styles.infoContainer}>
+      <Emoji emoji={{id: 'droplet'}} size={16} />
+      <Text>{props.humid}</Text>
+    </View>
+  );
+};
 
-const NameBlock = (props) => {};
+const NameBlock = (props) => {
+  return (
+    <View style={styles.infoContainer}>
+      <Emoji emoji={{id: 'one'}} size={16} />
+      <Text>{props.name}</Text>
+    </View>
+  );
+};
 
 const FermentCard = (props) => {
   let currentStep = props.currentStep - 1,
@@ -21,7 +49,8 @@ const FermentCard = (props) => {
     stepTemp = step.tempStep,
     remaining = Math.round(stepDuration - hoursDiff(stepDate)),
     timeSpent = '',
-    temp = '';
+    temp = '',
+    humidity = 'test';
 
   if (stepDate < dayjs()) {
     timeSpent = 'Step ended';
@@ -50,24 +79,12 @@ const FermentCard = (props) => {
         ))}
       </View>
       <View style={styles.lineContainer}>
-        <View style={styles.infoContainer}>
-          <Emoji emoji={{id: 'alarm_clock'}} size={16} />
-          <Text>{timeSpent}</Text>
-        </View>
-        <View style={styles.infoContainer}>
-          <Emoji emoji={{id: 'one'}} size={16} />
-          <Text>{step.nameStep}</Text>
-        </View>
+        <NameBlock name={step.nameStep} />
+        <TimeBlock time={timeSpent} />
       </View>
-      <View style={styles.secondLineContainer}>
-        <View style={styles.infoContainer}>
-          <Emoji emoji={{id: 'thermometer'}} size={16} />
-          <Text>{temp}</Text>
-        </View>
-        <View style={styles.infoContainer}>
-          <Emoji emoji={{id: 'droplet'}} size={16} />
-          <Text>Humidity WIP</Text>
-        </View>
+      <View style={styles.lineContainer}>
+        <HumidBlock humid={humidity} />
+        <TempBlock temp={temp} />
       </View>
       <View style={styles.buttonContainer}>
         <Button style={styles.button} title="Edit" />
